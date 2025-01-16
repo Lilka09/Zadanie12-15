@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz na zajęcia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-section input[type="text"],
+        .form-section input[type="password"],
+        .form-section input[type="date"],
+        .form-section select,
+        .form-section textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-section input[type="radio"],
+        .form-section input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-section .inline {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .form-section .vertical {
+            display: flex;
+            flex-direction: column;
+        }
+        .buttons {
+            text-align: right;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .buttons .submit {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .buttons .reset {
+            background-color: #f44336;
+            color: white;
+        }
+        .buttons .rules {
+            background-color: #008CBA;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formularz na zajęcia</h1>
+        <form>
+            <!-- Imię i nazwisko -->
+            <div class="form-section">
+                <label for="name">Imię:</label>
+                <input type="text" id="name" name="name" placeholder="Wpisz imię">
+            </div>
+            <div class="form-section">
+                <label for="surname">Nazwisko:</label>
+                <input type="text" id="surname" name="surname" placeholder="Wpisz nazwisko">
+            </div>
+
+            <!-- Data urodzenia -->
+            <div class="form-section">
+                <label for="birthdate">Data urodzenia:</label>
+                <input type="date" id="birthdate" name="birthdate">
+            </div>
+
+            <!-- Miasto -->
+            <div class="form-section">
+                <label for="city">Miasto:</label>
+                <select id="city" name="city">
+                    <option value="gdansk">Gdańsk</option>
+                    <option value="sopot">Sopot</option>
+                    <option value="gdynia">Gdynia</option>
+                </select>
+            </div>
+
+            <!-- Rodzaj zajęć -->
+            <div class="form-section">
+                <label>Rodzaje zajęć:</label>
+                <div class="vertical">
+                    <input type="checkbox" name="zajecia" value="pianino">Pianino
+                    <input type="checkbox" name="zajecia" value="gitara">Gitara
+                    <input type="checkbox" name="zajecia" value="trabka">Trąbka
+                    <input type="checkbox" name="zajecia" value="flet">Flet / Klarnet
+                </div>
+            </div>
+
+            <!-- Umiejętności -->
+            <div class="form-section">
+                <label>Umiejętności:</label>
+                <div class="vertical">
+                    <input type="radio" name="umiejetnosci" value="nic">Nic nie umiem
+                    <input type="radio" name="umiejetnosci" value="troche">Trochę umiem
+                    <input type="radio" name="umiejetnosci" value="bardzo">Umiem bardzo dobrze
+                </div>
+            </div>
+
+            <!-- Nauczyciel -->
+            <div class="form-section">
+                <label>Nauczyciel:</label>
+                <div>
+                    <input type="radio" name="nauczyciel" value="kalinowska">J. Kalinowska
+                    <input type="radio" name="nauczyciel" value="martyniak">M. Martyniak
+                    <input type="radio" name="nauczyciel" value="rybka">K. Rybka
+                    <input type="radio" name="nauczyciel" value="strofa">Z. Strofa
+                    <input type="radio" name="nauczyciel" value="foch">D. Foch
+                </div>
+            </div>
+
+            <!-- Chęć do nauki -->
+            <div class="form-section">
+                <label>Chęć do nauki:</label>
+                <div>
+                    <input type="checkbox" name="checi" value="tak">Tak
+                    <input type="checkbox" name="checi" value="nie">Nie
+                    <input type="checkbox" name="checi" value="srednio">Średnio
+                    <input type="checkbox" name="checi" value="niepewno">Na pewno nie
+                </div>
+            </div>
+
+            <!-- Rodzaj instrumentu -->
+            <div class="form-section">
+                <label>Rodzaj instrumentu:</label>
+                <div class="vertical">
+                    <input type="checkbox" name="instrument" value="pianino">Pianino
+                    <input type="checkbox" name="instrument" value="gitara">Gitara
+                    <input type="checkbox" name="instrument" value="trabka">Trąbka
+                    <input type="checkbox" name="instrument" value="flet">Flet
+                    <input type="checkbox" name="instrument" value="klarnet">Klarnet
+                </div>
+            </div>
+
+            <!-- Miejsce zajęć -->
+            <div class="form-section">
+                <label>Miejsce zajęć:</label>
+                <div>
+                    <input type="radio" name="miejsce" value="sopot">Sopot
+                    <input type="radio" name="miejsce" value="gdynia">Gdynia
+                    <input type="radio" name="miejsce" value="gdansk">Gdańsk
+                </div>
+            </div>
+
+            <!-- Dodatkowe informacje -->
+            <div class="form-section">
+                <label for="info">Dodatkowe informacje / pytania (max 200 znaków):</label>
+                <textarea id="info" name="info" rows="4" maxlength="200"></textarea>
+            </div>
+
+            <!-- Cechy charakteru -->
+            <div class="form-section">
+                <label for="cechy">Cechy charakteru:</label>
+                <select id="cechy" name="cechy">
+                    <option value="mily">Miły</option>
+                    <option value="pomocny">Pomocny</option>
+                    <option value="chetny">Chętny</option>
+                    <option value="ciekawy">Ciekawy</option>
+                    <option value="radny">Radosny</option>
+                </select>
+            </div>
+
+            <!-- Wiek -->
+            <div class="form-section">
+                <label for="wiek">Wiek:</label>
+                <select id="wiek" name="wiek">
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+
+            <!-- Login i hasło -->
+            <div class="form-section">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login" placeholder="Wpisz login">
+            </div>
+            <div class="form-section">
+                <label for="password">Hasło:</label>
+                <input type="password" id="password" name="password" placeholder="Wpisz hasło">
+            </div>
+
+            <!-- Przyciski -->
+            <div class="buttons">
+                <button type="button" class="rules">Regulamin</button>
+                <button type="reset" class="reset">Wyczyść</button>
+                <button type="submit" class="submit">Wyślij</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
